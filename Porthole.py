@@ -8,10 +8,14 @@ main_socket = socket()
 def mass_scan(ip_addresses, socket_obj, ports = 100, suppress_warnings = False):
     #If more than 1 IP entered, alert user that multiple are being checked.
     if len(ip_addresses) > 1:
-        print(colored("[*} Scanning multiple targets...", "green"))
+        print(colored(
+            "[*} Scanning multiple targets...", "green")
+            )
     for ip_address in ip_addresses:
         #Print out current IP address being scanned.
-        print(colored(f"[*] Checking address {ip_address}...", "yellow"))
+        print(colored(
+            f"[*] Checking address {ip_address}...", "yellow")
+            )
         for port in range(1, ports):
             #Scan each port in given IP address, alert user to success/failure
             port_scan(ip_address, port, socket_obj, suppress_warnings)
